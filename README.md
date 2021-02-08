@@ -1,10 +1,15 @@
-# ghq-list-branch-master
+# ghq-detect-branch
 
-ghqで管理してるrepoのbranchがmasterなやつを探すやつ。
-かなり適当。
+ghqで管理してるrepoから、特定のbranchを持つrepoを探すスクリプト。
 
-mainを探したくなったりしそうだから、
+## Usage
 ```
-ghq-list-detect-branch hoge
+ghq-detect-branch main
+ghq-detect-branch master
+ghq-detect-branch develop
+ghq-detect-branch feature/*
 ```
-みたいにしてもよかった。
+
+## ToDo
+- [ ] specify grep
+- [ ] include remote (branch -a)

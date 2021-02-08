@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: ghq-detect-branch BRANCH"
+  exit 1
+fi
+
+branch="$1"
+
+for repo in $(ghq list -p); do
+  if git -C "$repo" branch | grep -q "${branch}" > /dev/null 2>&1 ; then
+    echo "$repo"
+  fi
+done
